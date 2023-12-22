@@ -1,1 +1,1 @@
-Pro prohlážení funkcí: Interactive color bar 
+// to do
