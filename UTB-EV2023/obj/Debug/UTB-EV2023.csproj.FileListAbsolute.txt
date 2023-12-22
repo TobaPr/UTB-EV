@@ -1,0 +1,7 @@
+C:\Users\Prajz\source\repos\UTB-EV2023\bin\Debug\UTB-EV2023.exe.config
+C:\Users\Prajz\source\repos\UTB-EV2023\bin\Debug\UTB-EV2023.exe
+C:\Users\Prajz\source\repos\UTB-EV2023\bin\Debug\UTB-EV2023.pdb
+C:\Users\Prajz\source\repos\UTB-EV2023\obj\Debug\UTB-EV2023.csproj.AssemblyReference.cache
+C:\Users\Prajz\source\repos\UTB-EV2023\obj\Debug\UTB-EV2023.csproj.CoreCompileInputs.cache
+C:\Users\Prajz\source\repos\UTB-EV2023\obj\Debug\UTB-EV2023.exe
+C:\Users\Prajz\source\repos\UTB-EV2023\obj\Debug\UTB-EV2023.pdb
