@@ -57,11 +57,13 @@ namespace UTB_EV2023
                 {
                     Console.WriteLine($"\nD{dim} - {function.Method.Name}({counter})");
 
-                    double best_DE_rand = DE_rand.GetResult(dim, function); 
-                    double best_DE_best = DE_best.GetResult(dim, function);
-                    double best_PSO = PSO.GetResult(dim, function);
-                    double best_SOMA1 = SOMA_ALL_TO_ONE.GetResult(dim, function);
-                    double best_SOMA_ALL = SOMA_ALL_TO_ALL.GetResult(dim, function);
+
+
+                    double sum_DE_rand = DE_rand.GetResult(dim, function); 
+                    double sum_DE_best = DE_best.GetResult(dim, function);
+                    double sum_PSO = PSO.GetResult(dim, function);
+                    double sum_SOMA1 = SOMA_ALL_TO_ONE.GetResult(dim, function);
+                    double sum_SOMA_ALL = SOMA_ALL_TO_ALL.GetResult(dim, function);
 
                     // Pouštíme dle počtu opakování a bereme nejlepší výsledek
 
@@ -69,56 +71,49 @@ namespace UTB_EV2023
                     for (int i = 1; i < opakovani; i++)
                     {
                         double x = DE_rand.GetResult(dim, function);
-                        if (x < best_DE_rand)
-                        {
-                            best_DE_rand = x;
-                        }
+                        sum_DE_rand += x;
                     }
-                    Console.WriteLine($"\tDE_R \t{best_DE_rand}");
+                    double result_DE_rand = sum_DE_rand / opakovani;
+                    Console.WriteLine($"\tDE_R \t{result_DE_rand}");
 
                     // opakování DE_Best
                     for (int i = 1; i < opakovani; i++)
                     {
                         double x = DE_best.GetResult(dim, function);
-                        if (x < best_DE_best)
-                        {
-                            best_DE_best = x;
-                        }
+                        sum_DE_best += x;
                     }
-                    Console.WriteLine($"\tDE_B \t{best_DE_best}");
+                    double result_DE_best = sum_DE_best / opakovani;
+
+                    Console.WriteLine($"\tDE_B \t{result_DE_best}");
 
                     // opakování PSO
                     for (int i = 1; i < opakovani; i++)
                     {
                         double x = PSO.GetResult(dim, function);
-                        if (x < best_PSO)
-                        {
-                            best_PSO = x;
-                        }
+                        sum_PSO += x;
                     }
-                    Console.WriteLine($"\tPSO \t{best_PSO}");
+                    double result_PSO = sum_PSO / opakovani;
+
+                    Console.WriteLine($"\tPSO \t{result_PSO}");
 
                     // opakování SOMA1
                     for (int i = 1; i < opakovani; i++)
                     {
                         double x = SOMA_ALL_TO_ONE.GetResult(dim, function);
-                        if (x < best_SOMA1)
-                        {
-                            best_SOMA1 = x;
-                        }
+                        sum_SOMA1 += x;
                     }
-                    Console.WriteLine($"\tS_ONE \t{best_SOMA1}");
+                    double result_SOMA1 = sum_SOMA1 / opakovani;
+
+                    Console.WriteLine($"\tS_ONE \t{result_SOMA1}");
 
                     // opakování SOMA_ALL
                     for (int i = 1; i < opakovani; i++)
                     {
                         double x = SOMA_ALL_TO_ALL.GetResult(dim, function);
-                        if (x < best_SOMA_ALL)
-                        {
-                            best_SOMA_ALL = x;
-                        }
+                        sum_SOMA_ALL += x;
                     }
-                    Console.WriteLine($"\tS_ALL \t{best_SOMA_ALL}");
+                    double result_SOMA_ALL = sum_SOMA_ALL / opakovani;
+                    Console.WriteLine($"\tS_ALL \t{result_SOMA_ALL}");
 
                     counter++; 
                 }
