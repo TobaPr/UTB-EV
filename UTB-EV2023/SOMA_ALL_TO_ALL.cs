@@ -73,10 +73,17 @@ namespace UTB_EV2023
                 double stepSize = 0.11;
                 double prt = 0.7;
                 double randomValue = random.NextDouble();
-                double distance = stepSize * pathLength * (2 * randomValue - 1); // Implementace pro zahrnutí kroku a délky cesty
+               
+                // rozhodnutí zda dojde k pohybu
+                if (randomValue < prt)
+                {
+                    double distance = stepSize * pathLength * (2 * randomValue - 1); // Implementace pro zahrnutí kroku a délky cesty
 
-                // Aktualizovat souřadnici migranta na základě destinace a náhodného kroku
-                migrant.Position[i] = destination.Position[i] + prt * distance;
+                    // Aktualizace souřadnici migranta na základě destinace a náhodného kroku
+                    migrant.Position[i] = destination.Position[i] + distance;
+                }
+                // Pokud randomValue >= PRT, necháme souřadnici nezměněnou
+
             }
         }
 

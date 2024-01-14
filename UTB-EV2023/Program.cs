@@ -65,7 +65,7 @@ namespace UTB_EV2023
                     double sum_SOMA1 = SOMA_ALL_TO_ONE.GetResult(dim, function);
                     double sum_SOMA_ALL = SOMA_ALL_TO_ALL.GetResult(dim, function);
 
-                    // Pouštíme dle počtu opakování a bereme nejlepší výsledek
+                    // Pouštíme dle počtu opakování a bereme průměrný výsledek
 
                     // opakování DE_RAND  
                     for (int i = 1; i < opakovani; i++)

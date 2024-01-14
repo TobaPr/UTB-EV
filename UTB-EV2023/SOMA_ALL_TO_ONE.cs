@@ -76,10 +76,16 @@ namespace UTB_EV2023
                 // Použít parametry PathLength, StepSize a PRT
                 double pathLength = 3.0;
                 double randomValue = random.NextDouble();
-                double distance = stepSize * pathLength * (2 * randomValue - 1); // Implementace pro zahrnutí kroku a délky cesty
 
-                // Aktualizovat souřadnici migranta na základě destinace a náhodného kroku s uvažováním parametru PRT
-                migrant.Position[i] = destination.Position[i] + prt * distance;
+                // rozhodnutí zda dojde k pohybu
+                if (randomValue < prt)
+                {
+                    double distance = stepSize * pathLength * (2 * randomValue - 1); // Implementace pro zahrnutí kroku a délky cesty
+
+                    // Aktualizovat souřadnici migranta na základě destinace a náhodného kroku s uvažováním parametru PRT
+                    migrant.Position[i] = destination.Position[i] + distance;
+                }
+       
             }
         }
         static Individual[] InitializePopulation(int dim, Func<double[], double> function)
